@@ -2,4 +2,7 @@ __author__ = 'dungdt'
 
 class Entity:
     def set(self, key, value):
-        setattr(self, key, value.encode('utf-8'))
+        if isinstance(value, str):
+            value = value.encode('utf-8')
+
+        setattr(self, key, value)
