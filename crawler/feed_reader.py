@@ -1,6 +1,7 @@
+
 import xml.etree.ElementTree as ET
-import util
 from feed_processor import dailymail,reuters, nytimes
+import util
 
 class FeedReader:
     FEED_DAILYMAIL  = 'dailymail'
@@ -17,6 +18,7 @@ class FeedReader:
             self.feedType = FeedReader.FEED_NYTIMES
         elif 0 < feedUrl.find('reuters.com'):
             self.feedType = FeedReader.FEED_REUTERS
+        else:
             raise Exception('Invalid Feed Type')
 
         self.feedUrl = feedUrl
@@ -27,14 +29,16 @@ class FeedReader:
         data = util.downloadUrl(self.feedUrl)
         webpages = []
 
-        try:
-            xml = ET.fromstring(data)
-            processor = self.getFeedProcessor(xml)
-            webpages = processor.process()
-            for webpage in webpages:
-                self.dbConnector.addWebpage(webpage)
-        except ET.ParseError as e:
-            pass
+        if data:
+            try:
+                xml = ET.fromstring(data)
+                processor = self.getFeedProcessor(xml)
+                webpages = processor.process()
+                for webpage in webpages:
+                    if util.isValidUrl(webpage.url):
+                        self.dbConnector.addWebpage(webpage)
+            except ET.ParseError as e:
+                pass
 
         return webpages
 
@@ -43,9 +47,9 @@ class FeedReader:
 
         if FeedReader.FEED_DAILYMAIL == self.feedType:
             processor = dailymail.Dailymail(xml)
-        elif FeedReader.FEED_DAILYMAIL == self.feedType:
-            ''
-        elif FeedReader.FEED_DAILYMAIL == self.feedType:
-            ''
+        elif FeedReader.FEED_REUTERS == self.feedType:
+            processor = reuters.Reuters(xml)
+        elif FeedReader.FEED_NYTIMES == self.feedType:
+            processor = nytimes.Nytimes(xml)
 
         return processor

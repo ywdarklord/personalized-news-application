@@ -22,14 +22,15 @@ class DbConnector:
         cursor = self.cnx.cursor()
 
         insertQuery = (
-            "INSERT IGNORE INTO `webpage` (`unique_id`, `status`, `url`, `title`, `image`, `publisher`, `created`, `published`) "
-            "VALUES (%(uniqueId)s, %(status)s, %(url)s, %(title)s, %(image)s, %(publisher)s, now(), %(published)s)")
+            "INSERT IGNORE INTO `webpage` (`unique_id`, `status`, `url`, `title`, `image`, `raw_categories`, `publisher`, `created`, `published`) "
+            "VALUES (%(uniqueId)s, %(status)s, %(url)s, %(title)s, %(image)s, %(rawCategories)s, %(publisher)s, now(), %(published)s)")
 
         insertData = {
             'uniqueId': hashlib.sha256(webpage.url).hexdigest(),
             'status': int(webpage.status),
             'title': webpage.title,
             'image': webpage.image,
+            'rawCategories': webpage.rawCategories,
             'url': webpage.url,
             'publisher': webpage.publisher,
             'published': datetime.datetime.fromtimestamp(int(webpage.published)).strftime('%Y-%m-%d %H:%M:%S')
@@ -59,13 +60,23 @@ class DbConnector:
     def updateWebpageStatus(self, id, status):
         cursor = self.cnx.cursor()
 
-        updateQuery = (
-            "UPDATE `webpage` "
-            "SET `status` = %s "
-            "WHERE `id` = %s"
-        )
+        if status == Webpage.STT_DOWNLOADING:
+            updateQuery = (
+                "UPDATE `webpage` "
+                "SET `status` = %s,"
+                "    `tries` = `tries` + 1 "
+                "WHERE `id` = %s"
+            )
+        else:
+            updateQuery = (
+                "UPDATE `webpage` "
+                "SET `status` = %s "
+                "WHERE `id` = %s"
+            )
 
         cursor.execute(updateQuery, (int(status), int(id)))
+
+
         self.cnx.commit()
         cursor.close()
 
@@ -73,7 +84,7 @@ class DbConnector:
     def getUndownloadedWebpages(self, limit):
         cursor = self.cnx.cursor()
         query = (
-            "SELECT id, unique_id, status, url, title, image, publisher, tries, published "
+            "SELECT id, unique_id, status, url, title, image, publisher, tries, published, raw_categories "
             "FROM `webpage` "
             "WHERE status = %s AND tries < %s "
             "ORDER BY created ASC "

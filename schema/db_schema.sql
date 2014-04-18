@@ -1,15 +1,6 @@
 
-CREATE TABLE webpage (
-	title = None
-    url = None
-    description = None
-    uniqueId = None
-    publisher = None
-    created = None
-    published = None
-    html = None
-);
-
+DROP TABLE `webpage`;
+DROP TABLE `article`;
 
 CREATE TABLE IF NOT EXISTS `webpage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -18,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `webpage` (
   `url` varchar(255) NOT NULL,
   `title` varchar(500) DEFAULT NULL,
   `image` varchar(500) DEFAULT NULL,
+  `raw_categories` varchar(255) DEFAULT NULL,
   `publisher` varchar(50) NOT NULL,
   `tries` tinyint DEFAULT 0,
   `created` DATETIME DEFAULT NULL,

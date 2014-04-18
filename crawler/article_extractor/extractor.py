@@ -31,6 +31,7 @@ class Extractor:
         article.set('title', webpage.title)
         article.set('url', webpage.url)
         article.set('image', webpage.image)
+        article.set('rawCategories', webpage.rawCategories)
         article.published = str(webpage.published)
         article.html = webpage.html
 

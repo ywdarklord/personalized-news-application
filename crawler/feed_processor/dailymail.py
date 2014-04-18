@@ -6,12 +6,18 @@ from dateutil import parser
 
 class Dailymail(Processor):
     def process(self):
-        items = self.feed.find('channel').findall('item')
+        root = self.feed.find('channel')
+
+        feedCategory = root.find('category')
+        rawCategories = feedCategory.text
+
+        items = root.findall('item')
         webpages = []
 
         for item in items:
             webpage = Webpage()
             webpage.publisher = 'dailymail'
+            webpage.rawCategories = rawCategories
 
             for field in item.iter():
                 if 'title' == field.tag:

@@ -18,6 +18,7 @@ class Webpage(Entity):
     created = None
     published = None
     tries = None
+    rawCategories = None
 
     def __init__(self, data = {}):
         self.status = self.STT_CREATED
@@ -48,6 +49,9 @@ class Webpage(Entity):
 
         if 'published' in data:
             self.published = data['published']
+
+        if 'raw_categories' in data:
+            self.rawCategories = data['raw_categories']
 
 
     def __str__(self):
