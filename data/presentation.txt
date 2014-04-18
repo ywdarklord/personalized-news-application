@@ -1,0 +1,28 @@
+1. Introduction: 1 slide
+	Team
+	Big idea
+		Problem
+		How we wanna solve the problem
+		What we wanna develop
+2. Project Overview: 2 slides
+	Data flow
+	Architecture
+		Crawler
+		Classifier
+		Recommender
+3. Classifier: 2 slides
+	Algorithm
+		Naive Bayes
+	Dataset
+		Reuters
+	Evaluation
+4. Recommender: 2 slides
+	Algorithm
+		Categories
+		tf-idf
+		weighted score
+	Evaluation
+6. Conclusion: 1 slides
+	Future work
+
+	
