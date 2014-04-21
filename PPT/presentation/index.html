@@ -13,8 +13,7 @@
 		<p>A personalized news website</p>
 	</header>
 	<section class="slide cover" id="Cover"><div>
-		<h2>A Personalized News Websites</h2>
-		<p>Brought to you by <a href="http://www.yangwangblog.com/fb">Dung Dam and Yang Wang</a></p>
+
 		<img src="pictures/cover.jpg" alt="">
 		<!--
 			To apply styles to the certain slides
@@ -23,84 +22,87 @@
 		<style>
 			#Cover h2 {
 				margin:30px 0 0;
-				color:#FFF;
+				color:#f7e30a;
 				text-align:center;
 				font-size:70px;
 				}
 			#Cover p {
 				margin:10px 0 0;
 				text-align:center;
-				color:#FFF;
+				color:#f1051b;
 				font-style:italic;
 				font-size:20px;
 				}
 				#Cover p a {
-					color:#FFF;
+					color:#f1051b;
 					}
 		</style>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Introduction</h2>
+		<h2>Big Questions</h2>
 		<ol>
-			<li>Take advantage of use Facebook information to show personalized news</li>
-			<li>No need to go through each category one by one.</li>
-			<li>Slide themes are separated from engine</li>
-			<li>No need to adjust preference manually </li>
-			<li>Crawl latest news data set then classify them to our pre-defined category</li>
-			<li>Get Facebook user information when they login to our website and then show them correspond news</li>
+			<li>A huge number of news articles are generated every day, is this possible to combine them into just one news portal?</li>
+			<li>People are personalizing their social network profiles every day, is this possible to extract their characteristics from those profiles to offer them the best user experience?</li>
 		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+		
 	</div></section>
 	<section class="slide"><div>
-		<h2>Project Overview</h2>
-		<p> Data Flow</p>
+		<h2>Our Product:</h2>
+		<h2 id="product">A Personalized News Portal</h2>
+
+		<style>
+			#product {
+				margin-top: 150px;
+				margin-left: 50px;
+				}
+		</style>
+
 
 	</div></section>
 	<section class="slide"><div>
 		<h2>Project Overview</h2>
-		<p>Architecture</p>
-		<ul>
-			<li>Crawler</li>
-			<li>Classifier</li>
-			<li>RecommendeR</li>
-		</ul>
+		<img src="dataflow.png" height="370px" width="886px">
 				</div></section>
 	<section class="slide"><div>
-		<h2>Classfier</h2>
+		<h2>News Collector</h2>
 		<p> Algorithm</p>
+		<p></p>
+
 	</div></section>
 
-	<section class="slide"><div>
-		<h2>Classfier</h2>
-		<p> Dataset</p>
-	</div></section>
+	
 
-	<section class="slide"><div>
-		<h2>Recommender</h2>
-		<p>Put a pic here</p>
-		
+	<section class="slide cover" id="mainp"><div>
+		<h2>News Provider</h2>
+		<img src="mainpage.jpg" alt="">
+		<style>
+			#mainp h2 {
+				color:#162553;
+				}
+		</style>
 	</div></section>
 	
-	<section class="slide"><div>
-		<h2>Recommender</h2>
-		<p>Get user Facebook information like: likes, interested in, favorites, books, movies. Then treat them as a vector. This user is represented by this vector. And get tf-idf cosine similarity to the articles in our database and return the first 20 ranked articles.
-
-Get what category the user like base one “/me/likes” them map them to our pre-defined category and give each class a weight based on how frequent the user likes this category.</p>
-		
-	</div></section>
-	<section class="slide"><div>
-		<h2>Conclusion</h2>
-		
-		<p>Future works:</p>
+	<section class="slide cover" id="news_content"><div>
+		<img src="content.jpg" alt="">
+		<style>
+			#news_content h2 {
+				color:#162553;
+				}
+		</style>
 	</div></section>
 	
 	<section class="slide cover" id="Picture"><div>
-		<h2>Pictures</h2>
+		<h2>Conclusion</h2>
+		<p>Current Results</p>
+		<p>Future works</p>
 		<img src="pictures/picture.jpg" alt="">
 		<style>
 			#Picture h2 {
 				color:#FFF;
 				}
+			#Picture p{
+				color: #FFF;
+			}
 		</style>
 	</div></section>
 	
