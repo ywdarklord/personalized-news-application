@@ -37,6 +37,14 @@ CREATE TABLE IF NOT EXISTS `article` (
 	UNIQUE KEY `idx_unique` (`unique_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS `dictionary` (
+  `word` varchar(45) NOT NULL,
+  `document_frequency` int NOT NULL DEFAULT 0,
+  `idf` float DEFAULT 0.0,
+  PRIMARY KEY `word`
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 INSERT INTO webpage (`unique_id`, `status`, `url`, `title`, `html`, `publisher`, `created`, `published`)
 VALUES (%(uniqueId)s, %(status)s, %(url)s, %(title)s, %(html)s, %(publisher)s, now(), %(publishedSql)s)
+

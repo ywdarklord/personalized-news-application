@@ -1,4 +1,4 @@
-1. Introduction: 1 slide
+ 1. Introduction: 1 slide
 	Team
 	Big idea
 		Problem
@@ -22,7 +22,7 @@
 		tf-idf
 		weighted score
 	Evaluation
-6. Conclusion: 1 slides
+5. Conclusion: 1 slides
 	Future work
 
 	
