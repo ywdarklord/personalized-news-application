@@ -1,28 +1,33 @@
- 1. Introduction: 1 slide
+ 1. Introduction: 40s
 	Team
-	Big idea
-		Problem
-		How we wanna solve the problem
-		What we wanna develop
-2. Project Overview: 2 slides
-	Data flow
-	Architecture
-		Crawler
-		Classifier
-		Recommender
-3. Classifier: 2 slides
-	Algorithm
-		Naive Bayes
-	Dataset
-		Reuters
-	Evaluation
-4. Recommender: 2 slides
-	Algorithm
-		Categories
-		tf-idf
-		weighted score
-	Evaluation
-5. Conclusion: 1 slides
-	Future work
+		Hi everyone, I am Dung Dam and this is Yang Wang.
+		Today we will show you our idea of a new product.
+	2 Big Questions
+		There are 2 big questions that we are focusing on in this product.
+		First, there are thousands of news provider publishing millions of news artciles everyday. Is this possible to consolidate them into just one news portal?
+		Second, we observe that people are personalizing their facebook profiles every day, so is this possible for us to learn about a person's characteristics, their concerns and interests by discovering their facebook profile? If yes, how can we take advantage of this knowledge?
 
+		By trying to solve these 2 problems, we hope to bring a better reading experience to the users in our upcoming product:
+			A Personalized News Portal
+
+2. Project Overview: 60s
+	System diagram
+		This is the system overview. Our system consists of 3 main components: a news collector, a news provider and a website.
+		The News Collector is responsible for gathering the news from different sources, preprocessing them and storing them in database
+		It includes a news crawler and a classifier.
+		The News Provider takes charge of retrieving user information from social network, learning about their interests & concerns and then suggesting news articles based on this learning.
+		And the last component is a website, where the users can login by their facebook account and view the news articles personalized for them.
+
+
+3. Classifying News Articles: 30s
+	In our system, category of the news articles plays an important role, especially in the suggesting engine.
+	Once the articles are retrieved by the crawler, they need to be classified into categories. Instead of manually mapping the publisher categories with our categories, we use a Naive Bayes Classifier to label them automatically.
+	We use the copora provided by Reuters, containing about 11k labeled documents, 115 categories
+
+4. News Provider: 60s
+	
+5. Current Results: 20s
+	
+6. Future Work: 40s
+	
 	

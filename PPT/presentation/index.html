@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>670 Presentation | Dung Dam & Yang Wang</title>
+	<title>670 Presentation | Dung Dam &amp; Yang Wang</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,7 +13,6 @@
 		<p>A personalized news website</p>
 	</header>
 	<section class="slide cover" id="Cover"><div>
-		
 		<img src="pictures/cover.jpg" alt="">
 		<!--
 			To apply styles to the certain slides
@@ -38,49 +37,53 @@
 					}
 		</style>
 	</div></section>
+
 	<section class="slide"><div>
 		<h2>Big Questions</h2>
 		<ol>
-			<li>A huge number of news articles are generated every day, is this possible to combine them into just one news portal?</li>
-			<li>People are personalizing their social network profiles every day, is this possible to extract their characteristics from those profiles to offer them the best user experience?</li>
+			<li>A huge number of news articles generated every day, is this possible to combine them into just one news portal?</li>
+            <br />
+            <li>By viewing a facebook profile, can we understand about the characteristics, concerns and interests of a person? How can it help?</li>
 		</ol>
 		
 	</div></section>
+
 	<section class="slide"><div>
-		<h2>Our Product:</h2>
-		<h2 id="product">A Personalized News Portal</h2>
-
-		<style>
-			#product {
-				margin-top: 150px;
-				margin-left: 50px;
-				}
-		</style>
-
-
+        <div style="text-align:center; margin-top:110px;">
+            <h2>Our Product</h2>
+            <h2 style="font-size:70px;">A Personalized News Portal</h2>
+        </div>
 	</div></section>
+
 	<section class="slide"><div>
-		<h2>Project Overview</h2>
+		<h2>System Overview</h2>
 		<img src="dataflow.png" height="370px" width="886px">
-				</div></section>
-	<section class="slide"><div>
-		<h2>News Collector</h2>
-		<p> Algorithm</p>
-		<p></p>
-
 	</div></section>
 
-	
+	<section class="slide"><div>
+		<h2>Classifying News Articles</h2>
+        <ul>
+            <li>News category is an important factor in the suggesting engine</li>
+    		<li>Naive Bayes for classifier</li>
+            <li>Reuters Corpora for training and testing dataset
+                <ul>
+                    <li>~11k articles</li>
+                    <li>115 labels</li>
+                </ul>
+            </li>
+        </ul>
+	</div></section>
+
 
 	<section class="slide"><div>
 		<h2>News Provider</h2>
-		<p>Using user's Facebook info to get related articles</p>
-		<p>Re-rank the articles if it is the same as user's like in Facebook</p>
-		
+        <ul>
+            <li>Using user's Facebook info to get related articles</li>
+            <li>Re-ranking the articles if it is the same as user's like in Facebook</li>
+        </ul>
 	</div></section>
 
 	<section class="slide cover" id="mainp"><div>
-
 		<img src="mainpage.jpg" alt="">
 		<style>
 			#mainp h2 {
@@ -88,7 +91,6 @@
 				}
 			#mainp p{
 				color:#ff0000;
-
 			}
 		</style>
 	</div></section>
@@ -102,20 +104,47 @@
 		</style>
 	</div></section>
 	
-	<section class="slide cover" id="Picture"><div>
+	<section class="slide"><div>
 		<h2>Conclusion</h2>
-		<p>Current Results</p>
-		<p>Future works</p>
-		<img src="pictures/picture.jpg" alt="">
-		<style>
-			#Picture h2 {
-				color:#FFF;
-				}
-			#Picture p{
-				color: #FFF;
-			}
-		</style>
+        <ul>
+            <li>
+                Current Results
+                <ul>
+                    <li>Total articles crawled: 5k</li>
+                    <li>News providers: Reuters, NYTimes, Dailymail</li>
+                    <li>Classifier accuracy: ~80%</li>
+                </ul>
+            </li>
+            <li>
+                Future Work
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
 	</div></section>
+
+    <section class="slide cover" id="Picture"><div>
+        <h2>Thank You!</h2>
+        <img src="pictures/picture.jpg" alt="">
+        
+        <style>
+            #Picture h2 {
+                color:#FFF;
+                top: 220px; 
+                right:0; 
+                left:20px; 
+                position: absolute;
+                text-shadow:0 10px 0 rgba(0, 0, 0, 0.3);
+                text-align:center;
+                font-size:125px;
+                font-weight: bold;
+            }
+            #Picture p{
+                color: #FFF;
+            }
+        </style>
+    </div></section>
 	
 	
 	
