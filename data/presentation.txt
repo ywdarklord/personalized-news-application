@@ -31,3 +31,9 @@
 6. Future Work: 40s
 	
 	
+[1]
+[2] Google News
+[3] Prismatic
+[4] NLTK
+[5] Beautiful Soup
+[6] PhD thesis http://web.ist.utl.pt/acardoso/docs/2007-phd-thesis.pdf

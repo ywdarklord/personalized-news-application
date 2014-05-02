@@ -41,7 +41,24 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
   `word` varchar(45) NOT NULL,
   `document_frequency` int NOT NULL DEFAULT 0,
   `idf` float DEFAULT 0.0,
-  PRIMARY KEY `word`
+  PRIMARY KEY (`word`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS `user_information` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `fb_id` varchar(25) NOT NULL,
+    `name` varchar(255) NOT NULL,
+    `hometown` varchar(100) DEFAULT NULL,
+    `interests` varchar(1000) DEFAULT NULL,
+    `favorite_atheletes` varchar(2000) DEFAULT NULL,
+    `favorite_teams` varchar(2000) DEFAULT NULL,
+    `movies` varchar(2000) DEFAULT NULL,
+    `education` varchar(2000) DEFAULT NULL,
+    `work` varchar(2000) DEFAULT NULL,
+    `statuses` longtext DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_fb` (`fb_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
